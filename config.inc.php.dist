@@ -1,0 +1,67 @@
+<?php
+
+// ----------------------------------
+// SQL DATABASE
+// ----------------------------------
+// Similar to the $config['db_dsnw'] config variable, this is a
+// database connection string (DSN) for read operations.
+// For examples see http://pear.php.net/manual/en/package.database.mdb2.intro-dsn.php
+$config['postfixadmin_user_identities_db_dsnr'] = $config['db_dsnw'];
+
+// Name of the table that contains the mailbox information.
+$config['postfixadmin_user_identities_table_mbox'] = 'mailbox';
+
+// Name of the column in the mailbox table that should be matched against the username.
+$config['postfixadmin_user_identities_col_uname'] = 'local_part';
+
+// Name of the column in the mailbox table that contains the user's full name.
+$config['postfixadmin_user_identities_col_fullname'] = 'name';
+
+// Name of the column in the mailbox table that contains the user's email address.
+$config['postfixadmin_user_identities_col_email'] = 'username';
+
+// Name of the column in the mailbox table that contains the respective domain name.
+$config['postfixadmin_user_identities_col_mbox_domain'] = 'domain';
+
+
+// Name of the table that contains alias addresses.
+$config['postfixadmin_user_identities_table_alias'] = 'alias';
+
+// Name of the column in the alias table that contains the alias addresses.
+$config['postfixadmin_user_identities_col_address'] = 'address';
+
+// Name of the column in the alias table that contains the target addresses.
+$config['postfixadmin_user_identities_col_goto'] = 'goto';
+
+// Name of the column in the alias table that marks the alias as active.
+$config['postfixadmin_user_identities_col_alias_active'] = 'active';
+
+// Name of the column in the alias table that contains the respective domain name.
+$config['postfixadmin_user_identities_col_alias_domain'] = 'domain';
+
+
+// Name of the table that contains the domains.
+$config['postfixadmin_user_identities_table_domain'] = 'domain';
+
+// Name of the column in the domain table that contains the domain name.
+$config['postfixadmin_user_identities_col_domain'] = 'domain';
+
+// Name of the column in the domain table that marks the domain as active.
+$config['postfixadmin_user_identities_col_domain_active'] = 'active';
+
+
+// Name of the table that contains the domain aliases.
+$config['postfixadmin_user_identities_table_aliasdomain'] = 'alias_domain';
+
+// Name of the column in the alias domain table that contains the alias domain.
+$config['postfixadmin_user_identities_col_aliasdomain'] = 'alias_domain';
+
+// Name of the column in the alias domain table that contains the target domain.
+$config['postfixadmin_user_identities_col_gotodomain'] = 'target_domain';
+
+// Name of the column in the alias domain table that marks the alias domain as active.
+$config['postfixadmin_user_identities_col_aliasdomain_active'] = 'active';
+
+
+// Email addresses of the user that use a domain listed in this array will not be transferred to the roundcube database.
+$config['postfixadmin_user_identities_hide_domains'] = array();

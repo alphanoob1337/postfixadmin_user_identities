@@ -1,0 +1,21 @@
+{
+    "name": "alphanoob1337/postfixadmin_user_identities",
+    "type": "roundcube-plugin",
+    "description": "The user identities are created and updated from a postfixAdmin database.",
+    "license": "MIT",
+    "version": "0.1",
+    "authors": [
+        {
+            "name": "alphanoob1337"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://plugins.roundcube.net"
+        }
+    ],
+    "require": {
+        "roundcube/plugin-installer": ">=0.1.6"
+    }
+}
