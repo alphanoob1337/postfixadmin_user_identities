@@ -48,17 +48,17 @@ class postfixadmin_user_identities extends rcube_plugin
 
         $qh = $this->db->query($qrystr);
         $result = $this->db->fetch_array($qh);
-        if ($result !== FALSE)
-        {
-            $hidden_domains = $this->rc->config->get('postfixadmin_user_identities_hide_domains');
 
-            // Set full user name
+        $email_list = array();
+        $hidden_domains = $this->rc->config->get('postfixadmin_user_identities_hide_domains');
+        while ($result !== FALSE)
+        {
             $args['user_name'] = $result[0];
-            
-            $email_list = array();
-            
             $email_list[] = array($result[1], $result[2]);
-            
+            $result = $this->db->fetch_array($qh);
+        }
+        if (count($email_list) > 0)
+        {
             // Fetch alias domains
             $t_adom = $this->db->quote_identifier($this->rc->config->get('postfixadmin_user_identities_table_aliasdomain'));
             $c_adom_source = $t_adom . '.' . $this->db->quote_identifier($this->rc->config->get('postfixadmin_user_identities_col_aliasdomain'));
